@@ -3,12 +3,26 @@ new Vue({
     data: {
         title: 'Yo! Sup?',
         name: 'Ryan',
-        url: 'https://www.youtube.com/',
-        classes: ['one', 'two']
+        wage: 10,
+        coords: {
+            x: 0,
+            y: 0
+        }
     },
     methods: {
-        greet(time) {
-            return `Hello There ${this.name}, Good ${time}`
+        changeWage(amount) {
+            this.wage += amount
+        },
+        logEvent(e) {
+            console.log(e)
+        },
+        logCoords(e) {
+            this.coords.x = e.offsetX
+            this.coords.y = e.offsetY
+        },
+        updateName(e) {
+            // console.log(e.target.value)
+            this.name = e.target.value
         }
     }
 });
