@@ -6,11 +6,11 @@
     <body>
         <h1>Vue Basics</h1>
         <div id="app">
-            <h2>{{ title }}</h2>
-            <button @click.alt="logMessage">Alt - Click me!</button>
-            <button @click.shift="logMessage">Shift - Click me!</button>
-            <a href="http://www.google.com" @click.prevent="logMessage">Google</a>
-            <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers">Vue Modifiers</a>            
+            <h2>{{ title }}</h2>   
+            <p v-if="showName">Ryan</p>   
+            <p v-else-if="showAge">25</p>   
+            <button @click="toggleName">showName: {{ showName }}</button>
+            <button @click="toggleAge">showAge: {{ showAge }}</button>
         </div>
 
         <script src="app.js"></script>

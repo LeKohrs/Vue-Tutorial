@@ -1,11 +1,16 @@
 new Vue({
     el: '#app',
     data: {
-        title: 'Yo! Sup?'
+        title: 'Yo! Sup?',
+        showName: false,
+        showAge: true
     },
     methods: {
-       logMessage() {
-           console.log('Hello World')
+       toggleName() {
+           this.showName = !this.showName
+       },
+       toggleAge() {
+           this.showAge = !this.showAge
        }
     }
 });
