@@ -2,39 +2,15 @@
     <head>
         <title>Vue.js Tutorial</title>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <style>
-            .one {
-                color: green;
-            }
-            .two {
-                text-decoration: line-through;
-            }
-            .canvas {
-                width: 300px;
-                height: 300px;
-                margin-top: 20px;
-                background: #ddd;
-            }
-        </style>
     </head>
     <body>
         <h1>Vue Basics</h1>
         <div id="app">
             <h2>{{ title }}</h2>
-            <p>{{ name }}</p>
-            <input type="text" @keyup="updateName">
-            <input type="text" @keypress="updateName">
-            
-            <p>I earn {{ wage }} pounds per hour</p>
-            <button v-on:click="changeWage(1)">Increase wage by 1 pound</button>
-            <button v-on:click="changeWage(-1)">Decrease wage by 1 pound</button>
-            <button v-on:dblclick="changeWage(5)">Increase wage by 5 pound</button>
-            <button v-on:dblclick="changeWage(-5)">Decrease wage by 5 pound</button>
-
-            <hr>
-
-            <button @click="logEvent">Log Event Info</button>
-            <div class="canvas" @mousemove="logCoords"> {{ coords.x }}, {{ coords.y }}</div>
+            <button @click.alt="logMessage">Alt - Click me!</button>
+            <button @click.shift="logMessage">Shift - Click me!</button>
+            <a href="http://www.google.com" @click.prevent="logMessage">Google</a>
+            <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers">Vue Modifiers</a>            
         </div>
 
         <script src="app.js"></script>
